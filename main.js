@@ -13,7 +13,6 @@ for(let i =0; i<amount; i++) {
     square.style.backgroundColor ="white";
     board.insertAdjacentElement("beforeend",square);
 }
-
 }  
 populateBoard(16);
 
@@ -23,11 +22,9 @@ populateBoard(16);
       populateBoard(input);
     } else {
       document.querySelector("error").style.display = "flex";
-
     }
   }
-
-  function colorSquare() {
+     function colorSquare() {
     if (click) {
       if(color === "random") {
         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
@@ -36,26 +33,21 @@ populateBoard(16);
       }
     }
   }
-
-  function changeColor(choice) {
+    function changeColor(choice) {
     color = choice;
-    
-  }
-
+     }
   function resetBoard() {
     let board = document.querySelector(".board");
     let squares = board.querySelectorAll("div");
     squares.forEach((div) => (div.style.backgroundColor ="white"));
   }
-
-  document.querySelector("body").addEventListener("click",(e) => {
+     document.querySelector("body").addEventListener("click",(e) => {
     if(e.target .tagName != "button"){
   click = !click;
   if(click) {
     document.querySelector(".mode").textContent = "mode: coloring";
  } else{
   document.querySelector(".mode").textContent = "mode: not coloring";
-
   }
  }
   });
